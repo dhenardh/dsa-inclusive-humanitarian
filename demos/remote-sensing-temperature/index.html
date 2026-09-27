@@ -658,7 +658,52 @@
   </div>
 </section>
 
+<!-- BASELINE TEMPERATURE ANOMALY -->
+<section class="temperature-chart-section">
+  <div class="container">
 
+    <span class="eyebrow">BASELINE ANOMALY</span>
+
+    <h2>How different is each year from the historical baseline?</h2>
+
+    <p class="section-intro">
+      Temperature anomaly compares each year's comparable-period
+      Land Surface Temperature with the mean LST observed during the
+      2016–2020 baseline period. Positive values indicate conditions
+      warmer than the baseline, while negative values indicate
+      conditions cooler than the baseline.
+    </p>
+
+    <div class="chart-card">
+
+      <div class="chart-header">
+        <div>
+          <span class="chart-label">LST ANOMALY</span>
+          <h3>2016 → 2026</h3>
+        </div>
+
+        <div class="chart-highlight">
+          <span>2026 ANOMALY</span>
+          <strong id="anomaly2026">—</strong>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="anomalyChart"></canvas>
+      </div>
+
+      <div class="chart-note">
+        <strong>Reading the chart:</strong>
+        Values above zero indicate surface temperatures warmer than
+        the 2016–2020 baseline mean; values below zero indicate cooler
+        conditions. These values represent satellite-derived Land
+        Surface Temperature rather than 2-metre air temperature.
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 </main>
 
@@ -838,6 +883,92 @@ new Chart(deltaCtx, {
     }
   }
 });
+
+
+// =========================================================
+// BASELINE TEMPERATURE ANOMALY
+// Baseline: mean comparable-period LST 2016–2020
+// =========================================================
+
+const baselineValues = lstValues.slice(0, 5);
+
+const baselineMean =
+  baselineValues.reduce((sum, value) => sum + value, 0) /
+  baselineValues.length;
+
+const anomalyValues = lstValues.map(value =>
+  Number((value - baselineMean).toFixed(2))
+);
+
+const anomaly2026 = anomalyValues[anomalyValues.length - 1];
+
+document.getElementById('anomaly2026').textContent =
+  (anomaly2026 >= 0 ? '+' : '') +
+  anomaly2026.toFixed(2) +
+  '°C';
+
+const anomalyCtx = document.getElementById('anomalyChart');
+
+new Chart(anomalyCtx, {
+  type: 'bar',
+
+  data: {
+    labels: [
+      '2016', '2017', '2018', '2019', '2020',
+      '2021', '2022', '2023', '2024', '2025', '2026'
+    ],
+
+    datasets: [{
+      label: 'LST Anomaly vs 2016–2020 Baseline (°C)',
+      data: anomalyValues,
+      borderWidth: 1
+    }]
+  },
+
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            const value = context.parsed.y;
+
+            return 'Anomaly: ' +
+              (value >= 0 ? '+' : '') +
+              value.toFixed(2) +
+              '°C';
+          }
+        }
+      }
+    },
+
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'Year'
+        }
+      },
+
+      y: {
+        title: {
+          display: true,
+          text: 'LST Anomaly (°C)'
+        },
+
+        ticks: {
+          callback: function(value) {
+            return (value > 0 ? '+' : '') + value + '°C';
+          }
+        }
+      }
+    }
+  }
+});
+
+  
 </script>
 
 </body>
