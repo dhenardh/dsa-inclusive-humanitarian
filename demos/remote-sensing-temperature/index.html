@@ -609,7 +609,56 @@
 
   </div>
 </section>
- 
+
+</section>
+
+<!-- YEAR-TO-YEAR DELTA LST -->
+<section class="temperature-chart-section">
+  <div class="container">
+
+    <span class="eyebrow">YEAR-TO-YEAR CHANGE</span>
+
+    <h2>How did surface temperature change from year to year?</h2>
+
+    <p class="section-intro">
+      Year-to-year ΔLST measures the difference in mean Land Surface
+      Temperature between consecutive comparable observation periods.
+      Positive values indicate a warmer surface condition than the
+      preceding year, while negative values indicate a cooler condition.
+    </p>
+
+    <div class="chart-card">
+
+      <div class="chart-header">
+        <div>
+          <span class="chart-label">YEAR-TO-YEAR ΔLST</span>
+          <h3>2017 → 2026</h3>
+        </div>
+
+        <div class="chart-highlight">
+          <span>2025 → 2026</span>
+          <strong>−1.46°C</strong>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="deltaChart"></canvas>
+      </div>
+
+      <div class="chart-note">
+        <strong>Reading the chart:</strong>
+        ΔLST represents the difference between consecutive comparable-period
+        satellite-derived land surface temperature observations. Values above
+        zero indicate an increase from the preceding year; values below zero
+        indicate a decrease.
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
 
 </main>
 
@@ -697,6 +746,89 @@ new Chart(ctx, {
           display: true,
           text: 'Mean Land Surface Temperature (°C)'
         },
+        ticks: {
+          callback: function(value) {
+            return value + '°C';
+          }
+        }
+      }
+    }
+  }
+});
+</script>
+
+ <script>
+const deltaCtx = document.getElementById('deltaChart');
+
+const lstValues = [
+  32.88,
+  31.76,
+  32.15,
+  31.42,
+  31.95,
+  31.18,
+  30.86,
+  30.20,
+  30.02,
+  29.54,
+  28.08
+];
+
+const deltaValues = [];
+
+for (let i = 1; i < lstValues.length; i++) {
+  deltaValues.push(
+    Number((lstValues[i] - lstValues[i - 1]).toFixed(2))
+  );
+}
+
+new Chart(deltaCtx, {
+  type: 'bar',
+
+  data: {
+    labels: [
+      '2017', '2018', '2019', '2020', '2021',
+      '2022', '2023', '2024', '2025', '2026'
+    ],
+
+    datasets: [{
+      label: 'Year-to-Year ΔLST (°C)',
+      data: deltaValues,
+      borderWidth: 1
+    }]
+  },
+
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            const value = context.parsed.y;
+            return 'ΔLST: ' +
+              (value > 0 ? '+' : '') +
+              value.toFixed(2) + '°C';
+          }
+        }
+      }
+    },
+
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'Year'
+        }
+      },
+
+      y: {
+        title: {
+          display: true,
+          text: 'Year-to-Year ΔLST (°C)'
+        },
+
         ticks: {
           callback: function(value) {
             return value + '°C';
