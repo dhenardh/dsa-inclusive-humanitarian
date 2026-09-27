@@ -270,6 +270,125 @@
     font-size: 27px;
   }
 }
+
+   /* =========================================================
+   LST TIME-SERIES CHART
+   ========================================================= */
+
+.temperature-chart-section {
+  padding: 80px 0;
+}
+
+.temperature-chart-section h2 {
+  margin: 12px 0 14px;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.1;
+}
+
+.chart-card {
+  margin-top: 32px;
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #dbe4e7;
+  border-radius: 16px;
+  box-shadow: 0 14px 40px rgba(8, 40, 77, 0.06);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.chart-kicker {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #0878a5;
+}
+
+.chart-header h3 {
+  margin: 0;
+  font-size: 26px;
+  color: #08284d;
+}
+
+.chart-highlight {
+  min-width: 145px;
+  padding: 14px 18px;
+  border: 1px solid #dbe4e7;
+  border-radius: 12px;
+  text-align: right;
+  background: #f8fafc;
+}
+
+.chart-highlight span {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #0878a5;
+}
+
+.chart-highlight strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 24px;
+  color: #08284d;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+#lstChart {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.chart-note {
+  margin-top: 24px;
+  padding: 16px 18px;
+  border-left: 3px solid #f0a72f;
+  background: #f8fafc;
+  border-radius: 6px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.chart-note strong {
+  color: #08284d;
+}
+
+@media (max-width: 700px) {
+
+  .temperature-chart-section {
+    padding: 55px 0;
+  }
+
+  .chart-card {
+    padding: 20px;
+  }
+
+  .chart-header {
+    flex-direction: column;
+  }
+
+  .chart-highlight {
+    width: 100%;
+    text-align: left;
+  }
+
+  .chart-container {
+    height: 300px;
+  }
+}
   </style>
 </head>
 
@@ -448,6 +567,50 @@
     </div>
   </section>
 
+<section class="temperature-chart-section">
+  <div class="container">
+
+    <span class="eyebrow">MULTI-TEMPORAL ANALYSIS</span>
+
+    <h2>Comparable-period Land Surface Temperature, 2016–2026</h2>
+
+    <p class="section-intro">
+      MODIS daytime Land Surface Temperature (LST) observations for the
+      same comparable calendar window each year, allowing temperature
+      conditions to be examined consistently through time.
+    </p>
+
+    <div class="chart-card">
+
+      <div class="chart-header">
+        <div>
+          <span class="chart-kicker">LAND SURFACE TEMPERATURE</span>
+          <h3>2016 → 2026</h3>
+        </div>
+
+        <div class="chart-highlight">
+          <span>2026 LST</span>
+          <strong>28.08°C</strong>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="lstChart"></canvas>
+      </div>
+
+      <div class="chart-note">
+        <strong>Reading the chart:</strong>
+        Values represent satellite-derived land surface temperature,
+        not 2-metre air temperature. The 2026 value is based on the
+        same year-to-date calendar window used for the preceding years.
+      </div>
+
+    </div>
+
+  </div>
+</section>
+ 
+
 </main>
 
 
@@ -457,6 +620,93 @@
     Kupang Remote Sensing Case Study
   </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('lstChart');
+
+new Chart(ctx, {
+  type: 'line',
+
+  data: {
+    labels: [
+      '2016', '2017', '2018', '2019', '2020',
+      '2021', '2022', '2023', '2024', '2025', '2026'
+    ],
+
+    datasets: [{
+      label: 'Mean Land Surface Temperature (°C)',
+
+      data: [
+        32.88,
+        31.76,
+        32.15,
+        31.42,
+        31.95,
+        31.18,
+        30.86,
+        30.12,
+        29.94,
+        29.54,
+        28.08
+      ],
+
+      borderWidth: 3,
+      tension: 0.25,
+      pointRadius: 5,
+      pointHoverRadius: 8,
+      fill: false
+    }]
+  },
+
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+
+    interaction: {
+      mode: 'index',
+      intersect: false
+    },
+
+    plugins: {
+      legend: {
+        display: true,
+        position: 'top'
+      },
+
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            return ' LST: ' + context.parsed.y.toFixed(2) + '°C';
+          }
+        }
+      }
+    },
+
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'Year'
+        }
+      },
+
+      y: {
+        title: {
+          display: true,
+          text: 'Mean Land Surface Temperature (°C)'
+        },
+        ticks: {
+          callback: function(value) {
+            return value + '°C';
+          }
+        }
+      }
+    }
+  }
+});
+</script>
 
 </body>
 </html>
