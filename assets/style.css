@@ -45,3 +45,59 @@
     flex-wrap: wrap;
   }
 }
+/* ===== DSA LIVE WEBGIS SECTION ===== */
+
+#live-demo {
+  padding-top: 70px;
+  padding-bottom: 90px;
+}
+
+#live-demo .demo-card {
+  margin-top: 30px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px 32px;
+  box-shadow: 0 16px 45px rgba(16, 42, 58, 0.08);
+}
+
+#live-demo .demo-card strong {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+
+#live-demo .demo-card p {
+  margin: 0 0 20px;
+  max-width: 850px;
+  line-height: 1.65;
+}
+
+#live-demo .demo-card a {
+  display: inline-block;
+  padding: 13px 22px;
+  background: var(--blue);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 9px;
+  border: 1px solid var(--blue);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+#live-demo .demo-card a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(8, 120, 165, 0.20);
+}
+
+@media (max-width: 760px) {
+  #live-demo {
+    padding-top: 45px;
+    padding-bottom: 60px;
+  }
+
+  #live-demo .demo-card {
+    padding: 22px;
+  }
+}
