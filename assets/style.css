@@ -950,3 +950,43 @@
     font-size: 27px;
   }
 }
+
+
+/* =========================================================
+   DEVELOPER PHOTO — ICT4D KENYA 2016
+   ========================================================= */
+
+.developer-photo {
+  max-width: 760px;
+  margin: 36px 0 32px;
+}
+
+.developer-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid #dbe4e7;
+  box-shadow: 0 12px 32px rgba(8, 40, 77, 0.08);
+}
+
+.developer-photo figcaption {
+  margin-top: 12px;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.developer-photo figcaption strong {
+  color: #08284d;
+}
+
+@media (max-width: 600px) {
+  .developer-photo {
+    margin: 28px 0 26px;
+  }
+
+  .developer-photo figcaption {
+    font-size: 13px;
+  }
+}
