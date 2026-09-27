@@ -1,0 +1,325 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Remote Sensing & Temperature Change — Kupang | DSA</title>
+
+  <meta
+    name="description"
+    content="DSA demonstration of satellite-based land surface temperature and temperature-change analysis for Kota Kupang and Kabupaten Kupang, Indonesia."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      color: #08284d;
+      background: #f5f8f8;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 22px 0;
+      border-bottom: 1px solid #dce6e8;
+      background: #ffffff;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+
+    .back-link {
+      color: #0878a5;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 90px 0 65px;
+    }
+
+    .eyebrow {
+      display: block;
+      color: #0878a5;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.02;
+      letter-spacing: -.04em;
+    }
+
+    .lead {
+      max-width: 780px;
+      margin-top: 26px;
+      font-size: 19px;
+      color: #536b76;
+    }
+
+    .location {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 9px 14px;
+      border: 1px solid #cbdadd;
+      border-radius: 999px;
+      background: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .analysis {
+      padding: 30px 0 80px;
+    }
+
+    .analysis h2 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      color: #64727d;
+      margin-bottom: 35px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #d7e1e4;
+      border-radius: 14px;
+      padding: 24px;
+      min-height: 190px;
+    }
+
+    .number {
+      color: #0a86ad;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .card h3 {
+      margin: 14px 0 10px;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 14px;
+      color: #64727d;
+    }
+
+    .workflow {
+      margin-top: 50px;
+      padding: 32px;
+      background: #08284d;
+      color: #ffffff;
+      border-radius: 16px;
+    }
+
+    .workflow h3 {
+      margin-top: 0;
+      font-size: 25px;
+    }
+
+    .workflow p {
+      margin-bottom: 0;
+      color: #d9e7ef;
+      font-size: 17px;
+    }
+
+    footer {
+      padding: 30px 0 50px;
+      color: #64727d;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 60px 0 40px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="brand">DSA / REMOTE SENSING</div>
+
+    <a class="back-link" href="../../">
+      ← Back to DSA
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container">
+
+      <span class="eyebrow">
+        DSA REMOTE SENSING DEMONSTRATION
+      </span>
+
+      <h1>
+        Remote Sensing &<br>
+        Temperature Change
+      </h1>
+
+      <p class="lead">
+        Exploring how satellite observations can be transformed into
+        comparable temperature indicators, spatial change analysis and
+        decision-support information.
+      </p>
+
+      <div class="location">
+        Study Area · Kota Kupang + Kabupaten Kupang · Nusa Tenggara Timur · Indonesia
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="analysis">
+    <div class="container">
+
+      <span class="eyebrow">ANALYTICAL FRAMEWORK</span>
+
+      <h2>From satellite observations to spatial evidence.</h2>
+
+      <p class="section-intro">
+        The Kupang case study explores temperature conditions across
+        comparable periods and examines how spatial patterns change
+        through time.
+      </p>
+
+
+      <div class="grid">
+
+        <article class="card">
+          <span class="number">01</span>
+          <h3>Land Surface Temperature</h3>
+          <p>
+            Satellite-derived surface temperature observations across
+            the study area.
+          </p>
+        </article>
+
+
+        <article class="card">
+          <span class="number">02</span>
+          <h3>Year-to-Year ΔLST</h3>
+          <p>
+            Comparison of temperature conditions between comparable
+            observation periods.
+          </p>
+        </article>
+
+
+        <article class="card">
+          <span class="number">03</span>
+          <h3>Temperature Anomaly</h3>
+          <p>
+            Identification of areas that are warmer or cooler relative
+            to a historical reference.
+          </p>
+        </article>
+
+
+        <article class="card">
+          <span class="number">04</span>
+          <h3>Long-Term Trend</h3>
+          <p>
+            Estimation of persistent temperature change expressed as
+            degrees Celsius per decade.
+          </p>
+        </article>
+
+
+        <article class="card">
+          <span class="number">05</span>
+          <h3>Change Hotspots</h3>
+          <p>
+            Spatial identification of locations showing notable or
+            persistent temperature change.
+          </p>
+        </article>
+
+      </div>
+
+
+      <div class="workflow">
+
+        <h3>2016 → 2026</h3>
+
+        <p>
+          Satellite observations → comparable-period LST →
+          year-to-year change → anomaly → long-term trend →
+          temperature-change hotspots → spatial interpretation.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="container">
+    DSA — Remote Sensing & Inclusive Humanitarian Toolkit ·
+    Kupang Remote Sensing Case Study
+  </div>
+</footer>
+
+</body>
+</html>
