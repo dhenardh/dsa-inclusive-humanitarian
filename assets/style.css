@@ -570,3 +570,57 @@
     font-size: 24px;
   }
 }
+
+
+/* =========================================================
+   DEVELOPER PROFESSIONAL PROFILE
+   ========================================================= */
+
+.developer-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 900px;
+  margin: 26px 0 30px;
+  padding: 18px 22px;
+  border: 1px solid #dce4ec;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.developer-profile div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.developer-profile strong {
+  font-size: 17px;
+  color: #08284d;
+}
+
+.developer-profile span {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #64727d;
+}
+
+.developer-profile a {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0878a5;
+  text-decoration: none;
+}
+
+.developer-profile a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .developer-profile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
