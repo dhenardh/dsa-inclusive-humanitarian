@@ -864,3 +864,89 @@
     min-height: auto;
   }
 }
+
+/* =========================================================
+   KUPANG KEY FINDINGS
+   ========================================================= */
+
+.key-findings {
+  padding: 70px 0;
+}
+
+.findings-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+.finding-card {
+  background: #ffffff;
+  border: 1px solid #dbe4e7;
+  border-radius: 14px;
+  padding: 24px;
+  min-height: 180px;
+  box-shadow: 0 10px 30px rgba(8, 40, 77, 0.06);
+}
+
+.finding-label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0878a5;
+}
+
+.finding-card strong {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 30px;
+  line-height: 1.1;
+  color: #08284d;
+}
+
+.finding-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #53646d;
+}
+
+.finding-note {
+  margin-top: 22px;
+  padding: 18px 20px;
+  background: #f8fafc;
+  border-left: 4px solid #f0a72f;
+  border-radius: 8px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.finding-note strong {
+  color: #08284d;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .findings-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .findings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .finding-card {
+    min-height: auto;
+  }
+
+  .finding-card strong {
+    font-size: 27px;
+  }
+}
