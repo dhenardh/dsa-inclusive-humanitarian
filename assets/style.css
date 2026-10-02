@@ -1055,3 +1055,85 @@ grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
     margin: 0;
   }
 }
+
+/* =========================================================
+   DSA DEVELOPMENT ROADMAP
+   ========================================================= */
+
+.roadmap-visual {
+  max-width: 1050px;
+  margin: 64px auto 20px;
+}
+
+.roadmap-heading {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.roadmap-heading span {
+  display: block;
+  margin-bottom: 10px;
+  color: #0891b2;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.roadmap-heading h3 {
+  margin: 0 0 10px;
+  color: #08284d;
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+.roadmap-heading p {
+  margin: 0;
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.roadmap-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 18px;
+  border: 1px solid #dbe4e7;
+  box-shadow: 0 14px 38px rgba(8, 40, 77, 0.10);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .roadmap-visual {
+    margin-top: 48px;
+  }
+
+  .roadmap-heading h3 {
+    font-size: 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .roadmap-visual {
+    margin-top: 40px;
+  }
+
+  .roadmap-heading {
+    margin-bottom: 20px;
+  }
+
+  .roadmap-heading h3 {
+    font-size: 21px;
+  }
+
+  .roadmap-heading p {
+    font-size: 14px;
+  }
+
+  .roadmap-visual img {
+    border-radius: 12px;
+  }
+}
