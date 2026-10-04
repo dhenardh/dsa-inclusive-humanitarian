@@ -1137,3 +1137,69 @@ grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
     border-radius: 12px;
   }
 }
+
+/* =========================================================
+   HOW DSA THINKS — INCLUSIVE GIS FRAMEWORK
+   ========================================================= */
+
+.dsa-thinking {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.dsa-thinking .lead {
+  max-width: 820px;
+  margin-bottom: 32px;
+}
+
+.dsa-thinking-visual {
+  width: min(1200px, 92vw);
+  max-width: 1200px;
+  margin: 36px auto 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dsa-thinking-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid #dbe4e7;
+  box-shadow: 0 14px 38px rgba(8, 40, 77, 0.10);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .dsa-thinking {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  .dsa-thinking-visual {
+    width: 94vw;
+    margin-top: 28px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .dsa-thinking {
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+
+  .dsa-thinking .lead {
+    margin-bottom: 22px;
+  }
+
+  .dsa-thinking-visual {
+    width: 94vw;
+    margin-top: 22px;
+  }
+
+  .dsa-thinking-visual img {
+    border-radius: 12px;
+  }
+}
