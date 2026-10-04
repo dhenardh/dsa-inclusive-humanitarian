@@ -2122,3 +2122,179 @@ grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
     padding: 18px 16px;
   }
 }
+
+/* =========================================================
+   iRNA — FROM ANALYSIS TO SPATIAL INSIGHT
+   ========================================================= */
+
+.irna-spatial-bridge {
+  margin: 0 0 42px;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #dbe4e7;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(8, 40, 77, 0.05);
+}
+
+.irna-spatial-bridge-heading {
+  max-width: 820px;
+  margin-bottom: 26px;
+}
+
+.irna-spatial-bridge-heading > span {
+  display: block;
+  margin-bottom: 10px;
+  color: #008b8b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.irna-spatial-bridge-heading h3 {
+  margin: 0 0 12px;
+  color: #08284d;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.irna-spatial-bridge-heading p {
+  margin: 0;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* Spatial reasoning flow */
+
+.irna-spatial-question {
+  display: grid;
+  grid-template-columns:
+    minmax(125px, 1fr) auto
+    minmax(145px, 1fr) auto
+    minmax(145px, 1fr) auto
+    minmax(145px, 1fr) auto
+    minmax(165px, 1.15fr);
+  gap: 8px;
+  align-items: stretch;
+  margin-top: 24px;
+}
+
+.irna-spatial-question > div:not(.irna-spatial-arrow) {
+  min-height: 130px;
+  padding: 18px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #f8fafc;
+  border: 1px solid #dbe4e7;
+  border-radius: 12px;
+}
+
+.irna-spatial-question strong {
+  display: block;
+  margin-bottom: 9px;
+  color: #08284d;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+}
+
+.irna-spatial-question span {
+  display: block;
+  color: #475569;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.irna-spatial-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #008b8b;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Information passed to spatial view */
+
+.irna-spatial-data {
+  margin-top: 22px;
+  padding: 17px 20px;
+  background: #eaf8f7;
+  border-left: 4px solid #008b8b;
+  border-radius: 0 10px 10px 0;
+}
+
+.irna-spatial-data strong {
+  display: block;
+  margin-bottom: 7px;
+  color: #08284d;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.irna-spatial-data span {
+  color: #087f8c;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* Humanitarian safeguard */
+
+.irna-spatial-note {
+  margin: 18px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid #e5ecef;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+  .irna-spatial-bridge {
+    padding: 26px;
+  }
+
+  .irna-spatial-question {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .irna-spatial-question > div:not(.irna-spatial-arrow) {
+    min-height: auto;
+  }
+
+  .irna-spatial-arrow {
+    height: 32px;
+    transform: rotate(90deg);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .irna-spatial-bridge {
+    margin-bottom: 34px;
+    padding: 22px 18px;
+  }
+
+  .irna-spatial-bridge-heading h3 {
+    font-size: 20px;
+  }
+
+  .irna-spatial-question > div:not(.irna-spatial-arrow) {
+    padding: 17px 16px;
+  }
+
+  .irna-spatial-data {
+    padding: 16px 17px;
+  }
+}
