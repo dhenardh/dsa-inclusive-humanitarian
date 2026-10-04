@@ -1471,3 +1471,37 @@ grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
     width: 100%;
   }
 }
+
+/* =========================================================
+   iRNA — HUMAN DECISION PRINCIPLE
+   ========================================================= */
+
+.irna-human-review {
+  margin-top: 26px;
+  padding: 22px 24px;
+  border: 1px solid #cbdde2;
+  border-left: 4px solid #0f766e;
+  border-radius: 12px;
+  background: #f7fbfb;
+}
+
+.irna-human-review strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #08284d;
+}
+
+.irna-human-review p {
+  max-width: 900px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #475569;
+}
+
+@media (max-width: 600px) {
+  .irna-human-review {
+    padding: 18px;
+  }
+}
