@@ -1203,3 +1203,192 @@ grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
     border-radius: 12px;
   }
 }
+
+
+/* =========================================================
+   iRNA — INCLUSIVE RAPID NEEDS ASSESSMENT
+   ========================================================= */
+
+#demo {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.irna-header {
+  max-width: 850px;
+  margin-bottom: 34px;
+}
+
+.irna-status {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 10px;
+  border: 1px solid #0f766e;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #0f766e;
+}
+
+.irna-header h2 {
+  margin: 0 0 14px;
+}
+
+.irna-header .lead {
+  margin-bottom: 16px;
+}
+
+/* Workflow */
+
+.irna-workflow {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 36px 0;
+}
+
+.irna-step {
+  flex: 1;
+  min-width: 0;
+  padding: 20px 14px;
+  border: 1px solid #dbe4e7;
+  border-radius: 14px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.irna-step strong {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #08284d;
+}
+
+.irna-step span {
+  display: block;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #475569;
+}
+
+.irna-step.highlight {
+  border-color: #f59e0b;
+  background: #fffaf0;
+}
+
+.irna-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f59e0b;
+}
+
+/* Live demo card */
+
+.irna-demo-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: 30px;
+  padding: 26px 28px;
+}
+
+.irna-demo-card > div {
+  flex: 1;
+}
+
+.irna-demo-card strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: #08284d;
+}
+
+.irna-demo-card p {
+  margin: 0 0 10px;
+}
+
+.demo-privacy {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #64748b;
+}
+
+.irna-demo-card .demo-link {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* Development note */
+
+.irna-stage-note {
+  max-width: 850px;
+  margin-top: 24px;
+  padding: 18px 20px;
+  border-left: 4px solid #0f766e;
+  background: #f8fafc;
+  border-radius: 0 10px 10px 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #475569;
+}
+
+.irna-stage-note strong {
+  color: #08284d;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .irna-workflow {
+    flex-wrap: wrap;
+  }
+
+  .irna-step {
+    flex: 1 1 160px;
+  }
+
+  .irna-demo-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  #demo {
+    margin-top: 56px;
+    margin-bottom: 56px;
+  }
+
+  .irna-workflow {
+    display: block;
+  }
+
+  .irna-step {
+    width: 100%;
+    margin: 0;
+  }
+
+  .irna-arrow {
+    height: 34px;
+    transform: rotate(90deg);
+  }
+
+  .irna-demo-card {
+    padding: 20px;
+  }
+
+  .irna-demo-card .demo-link {
+    white-space: normal;
+    width: 100%;
+    text-align: center;
+  }
+}
