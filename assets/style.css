@@ -2298,3 +2298,73 @@ grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
     padding: 16px 17px;
   }
 }
+
+/* =========================================================
+   iRNA — LIVE WEBGIS DEMONSTRATION CAPABILITIES
+   ========================================================= */
+
+.irna-demo-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.irna-demo-capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 18px;
+}
+
+.irna-demo-capabilities span {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 11px;
+  background: #eaf8f7;
+  border: 1px solid #b9e3df;
+  border-radius: 999px;
+  color: #087f8c;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.irna-demo-capabilities span::before {
+  content: "✓";
+  margin-right: 6px;
+  color: #008b8b;
+  font-weight: 800;
+}
+
+/* Keep the demo button clearly separated */
+
+.irna-demo-card {
+  gap: 28px;
+}
+
+.irna-demo-card .demo-link {
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .irna-demo-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .irna-demo-capabilities {
+    gap: 7px;
+  }
+
+  .irna-demo-capabilities span {
+    font-size: 10.5px;
+  }
+
+  .irna-demo-card .demo-link {
+    align-self: flex-start;
+  }
+}
