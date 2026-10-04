@@ -1505,3 +1505,20 @@ grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
     padding: 18px;
   }
 }
+
+/* =========================================================
+   iRNA — DEVELOPMENT STAGE
+   ========================================================= */
+
+.irna-stage-note {
+  margin-top: 24px;
+  padding: 16px 20px;
+  border-left: 4px solid #64748b;
+  background: #f8fafc;
+  border-radius: 0 10px 10px 0;
+  color: #475569;
+}
+
+.irna-stage-note strong {
+  color: #08284d;
+}
