@@ -1659,3 +1659,26 @@ grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
     padding: 17px;
   }
 }
+
+
+/* =========================================================
+   iRNA — DOMAIN CARD TYPOGRAPHY FINAL
+   ========================================================= */
+
+#demo .irna-domain strong {
+  display: block !important;
+  margin: 0 0 7px 0 !important;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #08284d;
+}
+
+#demo .irna-domain span {
+  display: block !important;
+  margin: 0 !important;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #475569;
+}
