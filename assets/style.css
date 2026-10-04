@@ -1144,7 +1144,7 @@ grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
 
 .dsa-thinking {
   margin-top: 80px;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 }
 
 .dsa-thinking .lead {
