@@ -1580,3 +1580,82 @@ grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
     padding: 16px 18px;
   }
 }
+
+/* =========================================================
+   iRNA — LOOKS FOR / DOMAIN CARDS FIX
+   ========================================================= */
+
+.irna-looks-for {
+  margin: 38px 0 34px;
+}
+
+.irna-looks-for-heading {
+  margin-bottom: 22px;
+}
+
+.irna-looks-for-heading > span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #087f8c;
+}
+
+.irna-looks-for-heading h3 {
+  margin: 0 0 10px;
+  color: #08284d;
+  font-size: 20px;
+}
+
+.irna-looks-for-heading p {
+  max-width: 760px;
+  margin: 0;
+  color: #475569;
+  line-height: 1.65;
+}
+
+.irna-domain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.irna-domain {
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #dbe4e7;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(8, 40, 77, 0.04);
+}
+
+.irna-domain strong {
+  display: block;
+  margin-bottom: 7px;
+  color: #08284d;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.irna-domain span {
+  display: block;
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .irna-domain-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .irna-domain-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .irna-domain {
+    padding: 17px;
+  }
+}
