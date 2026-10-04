@@ -1522,3 +1522,61 @@ grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
 .irna-stage-note strong {
   color: #08284d;
 }
+
+/* =========================================================
+   iRNA — ASSESSMENT DOMAINS
+   ========================================================= */
+
+.irna-domains {
+  margin: 38px 0 34px;
+}
+
+.irna-domains-label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #087f8c;
+}
+
+.irna-domain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.irna-domain {
+  padding: 18px 20px;
+  background: #ffffff;
+  border: 1px solid #dbe4e7;
+  border-radius: 12px;
+  color: #08284d;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  box-shadow: 0 6px 18px rgba(8, 40, 77, 0.04);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .irna-domain-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .irna-domains {
+    margin: 30px 0;
+  }
+
+  .irna-domain-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .irna-domain {
+    padding: 16px 18px;
+  }
+}
